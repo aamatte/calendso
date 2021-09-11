@@ -40,6 +40,7 @@ const DatePicker = ({
     if (dayjs().month() !== selectedMonth) {
       setSelectedMonth(dayjs().month());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle month changes
@@ -121,6 +122,7 @@ const DatePicker = ({
     }
 
     setDays(days);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedMonth]);
 
   return (
