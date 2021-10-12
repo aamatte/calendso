@@ -6,6 +6,8 @@ import MockDate from "mockdate";
 
 import getSlots from "@lib/slots";
 
+import { WEEKDAYS_INDEXES } from "@components/ui/WeekdaySelect";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -17,7 +19,7 @@ it("can fit 24 hourly slots for an empty day", async () => {
     getSlots({
       inviteeDate: dayjs().add(1, "day"),
       frequency: 60,
-      workingHours: [{ days: [...Array(7).keys()], startTime: 0, endTime: 1440 }],
+      workingHours: [{ days: WEEKDAYS_INDEXES, startTime: 0, endTime: 1440 }],
       organizerTimeZone: "Europe/London",
     })
   ).toHaveLength(24);
@@ -29,7 +31,7 @@ it.skip("only shows future booking slots on the same day", async () => {
     getSlots({
       inviteeDate: dayjs(),
       frequency: 60,
-      workingHours: [{ days: [...Array(7).keys()], startTime: 0, endTime: 1440 }],
+      workingHours: [{ days: WEEKDAYS_INDEXES, startTime: 0, endTime: 1440 }],
       organizerTimeZone: "GMT",
     })
   ).toHaveLength(12);
