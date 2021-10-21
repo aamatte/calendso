@@ -51,7 +51,7 @@ function WebhookListItem(props: { webhook: TWebhook; onEditWebhook: () => void }
   return (
     <ListItem className="flex w-full p-4">
       <div className="flex justify-between w-full">
-        <div className="flex flex-col">
+        <div className="flex flex-col truncate">
           <div className="inline-block space-y-1">
             <span
               className={classNames(
@@ -62,18 +62,18 @@ function WebhookListItem(props: { webhook: TWebhook; onEditWebhook: () => void }
             </span>
           </div>
           <div className="flex mt-2">
-            <span className="flex space-x-2 text-xs">
+            <div className="sm:flex text-xs">
               {props.webhook.eventTriggers.map((eventTrigger, ind) => (
-                <span
+                <div
                   key={ind}
                   className={classNames(
-                    "px-1 text-xs rounded-sm w-max ",
+                    "px-1 w-min text-xs rounded-sm mr-2 mb-2",
                     props.webhook.active ? "text-blue-700 bg-blue-100" : "text-blue-200 bg-blue-50"
                   )}>
                   {t(`${eventTrigger.toLowerCase()}`)}
-                </span>
+                </div>
               ))}
-            </span>
+            </div>
           </div>
         </div>
         <div className="flex">
@@ -288,9 +288,9 @@ function WebhookEmbed(props: { webhooks: TWebhook[] }) {
               <Image width={40} height={40} src="/integrations/embed.svg" alt="Embed" />
               <div className="flex-grow pl-2 truncate">
                 <ListItemTitle component="h3">{t("standard_iframe")}</ListItemTitle>
-                <ListItemText component="p">Embed your calendar within your webpage</ListItemText>
+                <ListItemText component="p">{t("embed_your_calendar")}</ListItemText>
               </div>
-              <div>
+              <div className="flex">
                 <input
                   id="iframe"
                   className="px-2 py-1 text-sm text-gray-500 focus:ring-black focus:border-black"
@@ -313,9 +313,9 @@ function WebhookEmbed(props: { webhooks: TWebhook[] }) {
               <Image width={40} height={40} src="/integrations/embed.svg" alt="Embed" />
               <div className="flex-grow pl-2 truncate">
                 <ListItemTitle component="h3">{t("responsive_fullscreen_iframe")}</ListItemTitle>
-                <ListItemText component="p">A fullscreen scheduling experience on your website</ListItemText>
+                <ListItemText component="p">{t("a_fullscreen_scheduling_experience")}</ListItemText>
               </div>
-              <div>
+              <div className="flex">
                 <input
                   id="fullscreen"
                   className="px-2 py-1 text-sm text-gray-500 focus:ring-black focus:border-black"
