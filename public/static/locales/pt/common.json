@@ -5,7 +5,7 @@
   "confirm_or_reject_booking": "Confirme ou rejeite a reserva",
   "check_bookings_page_to_confirm_or_reject": "Consulte a sua página de reservas para confirmar ou rejeitar a reserva.",
   "event_awaiting_approval": "Um novo evento aguarda a sua aprovação",
-  "your_meeting_has_been_booked": "A sua reunião foi reservada",
+  "your_event_has_been_scheduled": "A sua reunião foi reservada",
   "event_type_has_been_rescheduled_on_time_date": "O evento {{eventType}} com {{name}} foi reagendado para as {{time}} ({{timeZone}}) de {{date}}.",
   "event_has_been_rescheduled": "O seu evento foi reagendado.",
   "hi_user_name": "Olá {{userName}}",

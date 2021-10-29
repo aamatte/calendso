@@ -5,7 +5,7 @@
   "confirm_or_reject_booking": "Подтвердите или отклоните запись",
   "check_bookings_page_to_confirm_or_reject": "Проверьте страницу мероприятий, чтобы подтвердить или отклонить запись.",
   "event_awaiting_approval": "Новое событие ждет вашего одобрения",
-  "your_meeting_has_been_booked": "Ваша встреча была забронирована",
+  "your_event_has_been_scheduled": "Ваша встреча была забронирована",
   "event_type_has_been_rescheduled_on_time_date": "Ваша {{eventType}} с {{name}} была перенесена на {{time}} ({{timeZone}}) на {{date}}.",
   "event_has_been_rescheduled": "Ваше событие было перенесено.",
   "hi_user_name": "Привет {{userName}}",

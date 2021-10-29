@@ -46,7 +46,7 @@ export default class EventAttendeeMail extends EventMail {
       />
     </svg>
     <h1 style="font-weight: 500; color: #161e2e;">${this.calEvent.language(
-      "your_meeting_has_been_booked"
+      "your_event_has_been_scheduled"
     )}</h1>
     <p style="color: #4b5563; margin-bottom: 30px;">${this.calEvent.language("emailed_you_and_attendees")}</p>
     <hr />
