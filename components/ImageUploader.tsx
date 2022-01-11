@@ -127,7 +127,7 @@ export default function ImageUploader({
         <div className="mb-4">
           <div className="flex flex-col items-center justify-center p-8 mt-6 cropper">
             {!result && (
-              <div className="flex items-center justify-start w-20 h-20 bg-gray-50 rounded-full max-h-20">
+              <div className="flex items-center justify-start w-20 h-20 rounded-full bg-gray-50 max-h-20">
                 {!imageSrc && (
                   <p className="w-full text-sm text-center text-white sm:text-xs">
                     {t("no_target", { target })}
@@ -150,7 +150,7 @@ export default function ImageUploader({
             </label>
           </div>
         </div>
-        <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse gap-x-2">
+        <div className="flex flex-row-reverse mt-5 gap-x-2">
           <DialogClose asChild>
             <Button onClick={() => showCroppedImage(croppedAreaPixels)}>{t("save")}</Button>
           </DialogClose>

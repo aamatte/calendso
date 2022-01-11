@@ -79,7 +79,7 @@ function HideBrandingInput(props: { hideBrandingRef: RefObject<HTMLInputElement>
               .
             </p>
           </div>
-          <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse gap-x-2">
+          <div className="flex flex-row-reverse mt-5 gap-x-2">
             <DialogClose asChild>
               <Button className="table-cell text-center btn-wide" onClick={() => setModalOpen(false)}>
                 {t("dismiss")}
