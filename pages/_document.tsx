@@ -5,8 +5,6 @@ const tagManagerArgs = {
   gtmId: "GTM-PJQRG9F",
 };
 
-TagManager.initialize(tagManagerArgs);
-
 type Props = Record<string, unknown> & DocumentProps;
 
 class MyDocument extends Document<Props> {
@@ -15,6 +13,8 @@ class MyDocument extends Document<Props> {
     return { ...initialProps };
   }
   render() {
+    TagManager.initialize(tagManagerArgs);
+
     return (
       <Html>
         <Head>

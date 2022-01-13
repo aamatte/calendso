@@ -56,6 +56,7 @@
     "@trpc/next": "^9.16.0",
     "@trpc/react": "^9.16.0",
     "@trpc/server": "^9.16.0",
+    "@types/react-gtm-module": "^2.0.1",
     "@vercel/edge-functions-ui": "^0.2.1",
     "@wojtekmaj/react-daterange-picker": "^3.3.1",
     "accept-language-parser": "^1.5.0",
