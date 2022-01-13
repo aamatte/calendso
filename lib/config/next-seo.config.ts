@@ -16,12 +16,12 @@ export const seoConfig: {
   defaultNextSeo: DefaultSeoProps;
 } = {
   headSeo: {
-    siteName: "Cal.com",
+    siteName: "PV Calendar",
   },
   defaultNextSeo: {
     twitter: {
-      handle: "@calendso",
-      site: "@Calendso",
+      handle: "@platan_ventures",
+      site: "@platan_ventures",
       cardType: "summary_large_image",
     },
   },
