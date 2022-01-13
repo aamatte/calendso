@@ -1,4 +1,11 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript, DocumentProps } from "next/document";
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-PJQRG9F",
+};
+
+TagManager.initialize(tagManagerArgs);
 
 type Props = Record<string, unknown> & DocumentProps;
 
@@ -7,7 +14,6 @@ class MyDocument extends Document<Props> {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
-
   render() {
     return (
       <Html>
@@ -20,7 +26,7 @@ class MyDocument extends Document<Props> {
           <meta name="msapplication-TileColor" content="#ff0000" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body className="dark:bg-black bg-gray-100">
+        <body className="bg-gray-100 dark:bg-black">
           <Main />
           <NextScript />
         </body>
