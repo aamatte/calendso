@@ -89,7 +89,7 @@ export const HeadSeo: React.FC<HeadSeoProps & { children?: never }> = (props) =>
   } = props;
 
   const truncatedDescription = description.length > 24 ? description.substring(0, 23) + "..." : description;
-  const pageTitle = title + " | PV";
+  const pageTitle = title + " | PV Calendar";
   let seoObject = buildSeoMeta({
     title: pageTitle,
     image,

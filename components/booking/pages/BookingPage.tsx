@@ -256,7 +256,7 @@ const BookingPage = (props: BookingPageProps) => {
                 eventTypeTitle: props.eventType.title,
                 profileName: props.profile.name,
               })}{" "}
-          | PV
+          | PV Calendar
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
