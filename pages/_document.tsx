@@ -1,9 +1,5 @@
-import Document, { DocumentContext, Head, Html, Main, NextScript, DocumentProps } from "next/document";
-import TagManager from "react-gtm-module";
-
-const tagManagerArgs = {
-  gtmId: "GTM-PJQRG9F",
-};
+import { GTMProvider } from "@elgorditosalsero/react-gtm-hook";
+import Document, { DocumentContext, Head, Main, NextScript, DocumentProps } from "next/document";
 
 type Props = Record<string, unknown> & DocumentProps;
 
@@ -13,10 +9,10 @@ class MyDocument extends Document<Props> {
     return { ...initialProps };
   }
   render() {
-    TagManager.initialize(tagManagerArgs);
+    const gtmParams = { id: "GTM-PJQRG9F" };
 
     return (
-      <Html>
+      <GTMProvider state={gtmParams}>
         <Head>
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -30,7 +26,7 @@ class MyDocument extends Document<Props> {
           <Main />
           <NextScript />
         </body>
-      </Html>
+      </GTMProvider>
     );
   }
 }

@@ -742,6 +742,11 @@
     fast-equals "^1.6.3"
     lodash "^4.17.15"
 
+"@elgorditosalsero/react-gtm-hook@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@elgorditosalsero/react-gtm-hook/-/react-gtm-hook-2.2.0.tgz#dfaac6c15b158ed72a16df05ed4f0bad22bbab9d"
+  integrity sha512-RDCmYkKX08CND29Aq3bhlSpL/i4WtmKK98N9vAlvNmhghJT/SGaH50o+EFoLfKAqWeFfAw5TjSLlEe1RlokI7Q==
+
 "@emotion/cache@^11.4.0", "@emotion/cache@^11.5.0":
   version "11.5.0"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.5.0.tgz#a5eb78cbef8163939ee345e3ddf0af217b845e62"
@@ -8923,11 +8928,6 @@ react-fit@^1.0.3:
   dependencies:
     detect-element-overflow "^1.2.0"
     prop-types "^15.6.0"
-
-react-gtm-module@^2.0.11:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/react-gtm-module/-/react-gtm-module-2.0.11.tgz#14484dac8257acd93614e347c32da9c5ac524206"
-  integrity sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==
 
 react-hook-form@^7.20.4:
   version "7.22.5"
