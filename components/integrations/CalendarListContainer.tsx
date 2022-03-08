@@ -248,7 +248,7 @@ function CalendarList(props: Props) {
                 item.type === "google_calendar" ? (
                   <ConnectIntegration
                     type={item.type}
-                    render={() => <img src="/btn_google_signin.png"></img>}
+                    render={() => <img className="h-12" src="/btn_google_signin.png"></img>}
                     onOpenChange={() => props.onChanged()}
                   />
                 ) : (
