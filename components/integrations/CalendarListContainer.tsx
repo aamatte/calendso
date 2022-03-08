@@ -249,7 +249,11 @@ function CalendarList(props: Props) {
                   <ConnectIntegration
                     type={item.type}
                     render={(btnProps) => (
-                      <Button color="secondary" {...btnProps} data-testid="integration-connection-button">
+                      <Button
+                        color="secondary"
+                        {...btnProps}
+                        data-testid="integration-connection-button"
+                        className="border-0 hover:bg-white">
                         <img className="h-12" src="/btn_google_signin.png"></img>
                       </Button>
                     )}
