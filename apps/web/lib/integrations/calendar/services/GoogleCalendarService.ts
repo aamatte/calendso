@@ -83,13 +83,14 @@ export default class GoogleCalendarService implements Calendar {
             dateTime: event.endTime,
             timeZone: event.organizer.timeZone,
           },
-          attendees: event.attendees.map((attendee) => ({
+          attendees: [{ name: "Kalio", email: "kalio@platan.us" }, ...event.attendees].map((attendee) => ({
             ...attendee,
             responseStatus: "accepted",
           })),
           reminders: {
             useDefault: true,
           },
+          guestsCanModify: true,
         };
 
         if (event.location) {
