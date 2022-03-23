@@ -10,12 +10,12 @@ const PoweredByCal = () => {
         <a target="_blank" className="text-gray-500 opacity-50 hover:opacity-100 dark:text-white">
           {t("powered_by")}{" "}
           <img
-            className="relative -mt-px inline h-[10px] w-auto dark:hidden"
+            className="relative -mt-px inline h-[16px] w-auto dark:hidden"
             src="/pv-logo.svg"
             alt="PV Logo"
           />
           <img
-            className="relative -mt-px hidden h-[10px] w-auto dark:inline"
+            className="relative -mt-px hidden h-[16px] w-auto dark:inline"
             src="/pv-logo.svg"
             alt="PV Logo"
           />
