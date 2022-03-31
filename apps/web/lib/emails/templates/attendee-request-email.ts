@@ -31,7 +31,7 @@ export default class AttendeeRequestEmail extends AttendeeScheduledEmail {
     }
 
     return {
-      from: `Cal.com <${this.getMailerOptions().from}>`,
+      from: `PV Cal <${this.getMailerOptions().from}>`,
       to: toAddresses.join(","),
       subject: `${this.calEvent.organizer.language.translate("booking_submitted_subject", {
         eventType: this.calEvent.type,
