@@ -172,7 +172,11 @@ export default function Onboarding(props: inferSSRProps<typeof getServerSideProp
     }
 
     const hasConfigureCalendar = props.integrations.some((integration) => integration.credential !== null);
-    if (hasConfigureCalendar) {
+    const hasCalendarSelected = props.connectedCalendars.every((calendar) =>
+      calendar?.calendars?.some((cal) => cal.isSelected)
+    );
+
+    if (hasConfigureCalendar && hasCalendarSelected) {
       step = 2;
     }
 
