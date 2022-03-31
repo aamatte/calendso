@@ -443,13 +443,15 @@ const loggedInViewerRouter = createProtectedRouter()
         So create a default destination calendar with the first primary connected calendar
         */
         const { integration = "", externalId = "" } = connectedCalendars[0].primary ?? {};
-        user.destinationCalendar = await ctx.prisma.destinationCalendar.create({
-          data: {
-            userId: user.id,
-            integration,
-            externalId,
-          },
-        });
+        if (integration && externalId) {
+          user.destinationCalendar = await ctx.prisma.destinationCalendar.create({
+            data: {
+              userId: user.id,
+              integration,
+              externalId,
+            },
+          });
+        }
       } else {
         /* There are connected calendars and a destination calendar */
 
