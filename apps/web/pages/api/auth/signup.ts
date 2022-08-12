@@ -1,3 +1,4 @@
+import { withSentry } from "@sentry/nextjs";
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { hashPassword } from "@lib/auth";
@@ -6,7 +7,7 @@ import slugify from "@lib/slugify";
 
 import { IdentityProvider } from ".prisma/client";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return;
   }
@@ -83,3 +84,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   res.status(201).json({ message: "Created user" });
 }
+
+export default withSentry(handler);

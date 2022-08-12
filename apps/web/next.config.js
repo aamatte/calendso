@@ -1,5 +1,18 @@
 const withTM = require("next-transpile-modules")(["@calcom/lib", "@calcom/prisma", "@calcom/ui"]);
 const { i18n } = require("./next-i18next.config");
+const { withSentryConfig } = require("@sentry/nextjs");
+
+const sentryWebpackPluginOptions = {
+  // Additional config options for the Sentry Webpack plugin. Keep in mind that
+  // the following options are set automatically, and overriding them is not
+  // recommended:
+  //   release, url, org, project, authToken, configFile, stripPrefix,
+  //   urlPrefix, include, ignore
+
+  silent: true, // Suppresses all logs
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options.
+};
 
 // So we can test deploy previews preview
 if (process.env.VERCEL_URL && !process.env.BASE_URL) {
@@ -53,7 +66,7 @@ if (process.env.ANALYZE === "true") {
 plugins.push(withTM);
 
 // prettier-ignore
-module.exports = () => plugins.reduce((acc, next) => next(acc), {
+module.exports = () => withSentryConfig(plugins.reduce((acc, next) => next(acc), {
   i18n,
   eslint: {
     // This allows production builds to successfully complete even if the project has ESLint errors.
@@ -98,4 +111,4 @@ module.exports = () => plugins.reduce((acc, next) => next(acc), {
       }
     ];
   },
-});
+}), sentryWebpackPluginOptions);

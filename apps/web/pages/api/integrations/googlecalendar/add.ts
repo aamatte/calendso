@@ -1,3 +1,4 @@
+import { withSentry } from "@sentry/nextjs";
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -12,13 +13,18 @@ const scopes = [
   "https://www.googleapis.com/auth/calendar.events",
 ];
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
     // Check that user is authenticated
     const session = await getSession({ req: req });
 
     if (!session) {
       res.status(401).json({ message: "You must be logged in to do this" });
+      return;
+    }
+
+    if (!credentials || credentials === "{}") {
+      res.status(400).json({ message: "There are no Google Credentials installed." });
       return;
     }
 
@@ -41,3 +47,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json({ url: authUrl });
   }
 }
+
+export default withSentry(handler);
