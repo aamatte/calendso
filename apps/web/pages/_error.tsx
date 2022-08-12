@@ -2,6 +2,7 @@
  * Typescript class based component for custom-error
  * @link https://nextjs.org/docs/advanced-features/custom-error-page
  */
+import * as Sentry from "@sentry/nextjs";
 import { NextPage, NextPageContext } from "next";
 import NextError, { ErrorProps } from "next/error";
 import React from "react";

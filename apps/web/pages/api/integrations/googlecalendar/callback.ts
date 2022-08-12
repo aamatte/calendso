@@ -1,3 +1,4 @@
+import { withSentry } from "@sentry/nextjs";
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -9,7 +10,7 @@ import { decodeOAuthState } from "../utils";
 
 const credentials = process.env.GOOGLE_API_CREDENTIALS;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { code } = req.query;
 
   // Check that user is authenticated
@@ -51,3 +52,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const state = decodeOAuthState(req);
   res.redirect(state?.returnTo ?? "/integrations");
 }
+
+export default withSentry(handler);
