@@ -61,3 +61,6 @@ yarn-error.log*
 
 # Typescript
 tsconfig.tsbuildinfo
+
+# Sentry
+.sentryclirc
