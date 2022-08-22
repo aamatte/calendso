@@ -46,11 +46,14 @@ const CustomError: NextPage<CustomErrorProps> = (props) => {
  * Partially adapted from the example in
  * https://github.com/vercel/next.js/tree/canary/examples/with-sentry
  */
-CustomError.getInitialProps = async ({ res, err, asPath }: AugmentedNextPageContext) => {
+CustomError.getInitialProps = async (contextData: AugmentedNextPageContext) => {
+  const { res, err, asPath } = contextData;
   const errorInitialProps = (await NextError.getInitialProps({
     res,
     err,
   } as NextPageContext)) as CustomErrorProps;
+
+  await Sentry.captureUnderscoreErrorException(contextData);
 
   // Workaround for https://github.com/vercel/next.js/issues/8592, mark when
   // getInitialProps has run
