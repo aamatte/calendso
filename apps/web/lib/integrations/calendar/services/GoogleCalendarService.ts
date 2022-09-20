@@ -83,10 +83,12 @@ export default class GoogleCalendarService implements Calendar {
             dateTime: event.endTime,
             timeZone: event.organizer.timeZone,
           },
-          attendees: [{ name: "Kalio", email: "kalio@platan.us" }, ...event.attendees].map((attendee) => ({
-            ...attendee,
-            responseStatus: "accepted",
-          })),
+          attendees: [{ name: "Kalio", email: "kalio@platan.us" }, ...event.attendees, event.organizer].map(
+            (attendee) => ({
+              ...attendee,
+              responseStatus: "accepted",
+            })
+          ),
           reminders: {
             useDefault: true,
           },
@@ -239,8 +241,8 @@ export default class GoogleCalendarService implements Calendar {
 
         (selectedCalendarIds.length === 0
           ? calendar.calendarList
-              .list()
-              .then((cals) => cals.data.items?.map((cal) => cal.id).filter(Boolean) || [])
+            .list()
+            .then((cals) => cals.data.items?.map((cal) => cal.id).filter(Boolean) || [])
           : Promise.resolve(selectedCalendarIds)
         )
           .then((calsIds) => {
